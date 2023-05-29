@@ -8,14 +8,14 @@ export default [
     path: routes.LOGIN,
     component: Login,
     exact: true,
-    restricted: true,
+    restricted: false,
     isPrivate: false,
   },
   {
     path: routes.HOME,
     component: Home,
     exact: true,
-    restricted: false,
-    isPrivate: true,
+    restricted: true,
+    isPrivate: false,
   },
 ];
