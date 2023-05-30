@@ -2,21 +2,19 @@ import React, { useEffect, useState } from 'react';
 import getMatchList from '../../apis/matchApi';
 
 const Match = () => {
-  const [rows, setRows] = useState([]);
+  const [matchs, setMatchs] = useState([]);
   const fetchData = async () => {
     const data = await getMatchList();
-    console.log(data);
-    console.log(Object.values(data));
-    setRows(Object.values(data));
+    setMatchs(Object.values(data));
   };
   useEffect(() => {
     fetchData();
   }, []);
   return (
     <div>
-      {rows.map((row) => (
+      {matchs.map((match) => (
         <div>
-          {row.map((sub, key) => (
+          {match.map((sub, key) => (
             <div>
               {key}
               {sub.date}
