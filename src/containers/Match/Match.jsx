@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import getMatchList from '../../apis/matchApi';
 
 const Match = () => {
-  return <div>Match</div>;
+  const [matchs, setMatchs] = useState([]);
+  const fetchData = async () => {
+    const data = await getMatchList();
+    setMatchs(Object.values(data));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      {matchs.map((match) => (
+        <div>
+          {match.map((subMatch, key) => (
+            <div>
+              {key}
+              {subMatch.date}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Match;
