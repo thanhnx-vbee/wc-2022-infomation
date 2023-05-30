@@ -7,17 +7,19 @@ const Match = () => {
     const data = await getMatchList();
     setMatchs(Object.values(data));
   };
+
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div>
       {matchs.map((match) => (
         <div>
-          {match.map((sub, key) => (
+          {match.map((subMatch, key) => (
             <div>
               {key}
-              {sub.date}
+              {subMatch.date}
             </div>
           ))}
         </div>
