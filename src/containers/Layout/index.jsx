@@ -11,12 +11,12 @@ const Layout = () => {
   return (
     <div>
       <TopNav />
-      <main>
+      <div>
         <Route exact path="/" component={Match} />
         <Route exact path="/footballers" component={Footballers} />
         <Route exact path="/statistics" component={Statistics} />
         <Route exact path="/ranks" component={Ranks} />
-      </main>
+      </div>
       <Footer />
     </div>
   );
