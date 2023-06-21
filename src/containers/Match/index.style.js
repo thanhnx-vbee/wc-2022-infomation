@@ -1,16 +1,22 @@
 import styled from 'styled-components';
 
 const MatchStyle = styled.div`
+  --hover: #000;
   margin-top: 80px;
   .matchComponent {
-    width: 1500px;
-    margin-left: 180px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     .dateTime {
+      margin-left: 1.2em;
+      display: flex;
+      flex-direction: flex-start;
       font-size: 20px;
       font-weight: 900;
-      padding: 0px 10px;
+      padding: 0 0 0 1em;
       border-left: 3px solid #09ae3e;
-      margin-bottom: 5px;
+      margin-bottom: 1em;
       &:hover {
         cursor: pointer;
       }
@@ -18,12 +24,12 @@ const MatchStyle = styled.div`
 
     .matches {
       display: flex;
-      flex-decoration: row;
-      animation: fadeIn 5s;
-      margin-top: 10px;
+      width: 100vw;
+      justify-content: flex-start;
+      margin-top: 1em;
       .match {
-        width: 350px;
-        height: 200px;
+        width: 22vw;
+        height: 30vh;
         background-color: #d9d9d9;
         border-radius: 20px;
         margin-left: 25px;
@@ -31,7 +37,7 @@ const MatchStyle = styled.div`
         cursor: pointer;
       }
       .subMatch {
-        border-radius: 10px;
+        border-radius: 1em;
         justify-content: center;
         width: 100%;
         .title {
@@ -42,7 +48,6 @@ const MatchStyle = styled.div`
           margin-top: 0px;
           background-color: #000;
           justify-content: center;
-          display: flex;
           width: 50%;
           margin-left: 25%;
           margin-bottom: 10px;
@@ -104,25 +109,32 @@ const MatchStyle = styled.div`
         }
       }
 
-      .result {
+      .button {
         display: flex;
         float: right;
-        margin-right: 15px;
-        margin-top: 8px;
-        .video {
-          color: #000;
-          font-weight: 900;
-          text-decoration: none;
-          padding: 3px 15px;
-          background-color: #fccd54;
-          border-radius: 10px;
-          &:hover {
-            color: #000;
-            background-color: #ccc;
+        .createButton {
+          background-color: #ffcd08;
+          padding: 0.2em 1em;
+          border-radius: 1em;
+          cursor: pointer;
+          margin: 0.9em 1em 0 0;
+          cursor: pointer;
+          p {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
           }
-          &.active {
-            background-color: #000;
-            color: #fff;
+          &:focus {
+            box-shadow: 0 0.5em 0.5em -0.2em var(--hover);
+            transform: translateY(-0.25em);
+          }
+          &:hover {
+            box-shadow: 0 0.5em 0.5em -0.2em var(--hover);
+            transform: translateY(-0.25em);
+            background-color: #09ae3e;
+            p {
+              color: #fff;
+            }
           }
         }
       }

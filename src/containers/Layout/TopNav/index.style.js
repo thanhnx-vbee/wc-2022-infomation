@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.div`
+  --hover: #000;
   display: flex;
   .appBar {
     max-width: 100vw;
@@ -31,6 +31,60 @@ const Wrapper = styled.div`
         justify-content: space-between;
         align-items: center;
         height: 100%;
+        .container {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          padding: 0px 16px;
+          font-size: 20px;
+          font-weight: 700;
+          height: 100%;
+          text-decoration: none;
+          div {
+            margin: 0.625em 0em;
+            display: flex;
+            align-items: center;
+            p {
+              cursor: pointer;
+              color: #828388;
+            }
+          }
+          &.active {
+            display: flex;
+            align-items: center;
+            padding: 0px 16px;
+            font-size: 20px;
+            font-weight: 700;
+            height: 100%;
+            background-color: #000;
+            text-decoration: none;
+            div {
+              p {
+                color: #fff;
+              }
+            }
+            &:focus {
+              box-shadow: 0 0.5em 0.5em -0.2em var(--hover);
+              transform: translateY(-0.25em);
+            }
+            &:hover {
+              background-color: #09ae3e;
+              box-shadow: 0 0.5em 0.5em -0.2em var(--hover);
+              transform: translateY(-0.25em);
+            }
+          }
+          &:focus {
+            box-shadow: 0 0.5em 0.5em -0.2em var(--hover);
+            transform: translateY(-0.25em);
+          }
+          &:hover {
+            box-shadow: 0 0.5em 0.5em -0.2em var(--hover);
+            transform: translateY(-0.25em);
+            p {
+              color: #ccc;
+            }
+          }
+        }
       }
       .headRight {
         margin-right: 50px;
@@ -51,25 +105,6 @@ const Wrapper = styled.div`
         }
       }
     }
-  }
-`;
-
-const SubItem = styled(NavLink)`
-  color: #fff;
-  display: flex;
-  align-items: center;
-  padding: 0px 16px;
-  font-size: 20px;
-  font-weight: 700;
-  height: 100%;
-  text-decoration: none;
-  &:hover {
-    color: #000;
-    background-color: #ccc;
-  }
-  &.active {
-    background-color: #000;
-    color: #fff;
   }
 `;
 
@@ -113,4 +148,4 @@ const Avatar = styled.img`
   weight: 40px;
 `;
 
-export { Wrapper, Logo, SubItem, MenuItem, Avatar, SelectList };
+export { Wrapper, Logo, MenuItem, Avatar, SelectList };

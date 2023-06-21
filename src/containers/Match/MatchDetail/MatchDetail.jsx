@@ -4,7 +4,12 @@ import { MatchDetailStyle } from './index.style';
 const MatchDetail = () => {
   return (
     <MatchDetailStyle>
-      <div className="matchDetail">hehe</div>
+      <div className="match">
+        <div className="title">hahah</div>
+        <div className="title">hahah</div>
+        <div className="title">hahah</div>
+        <div className="title">hahah</div>
+      </div>
     </MatchDetailStyle>
   );
 };

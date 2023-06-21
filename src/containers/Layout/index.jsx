@@ -1,22 +1,24 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React, { useState } from 'react';
 import TopNav from './TopNav/TopNav';
 import Footer from './Footer/Footer';
 import Match from '../Match/Match';
 import Footballers from '../Footballers/Footballers';
 import Statistics from '../Statistic/Statistics';
+import MatchDetail from '../Match/MatchDetail/MatchDetail';
 import Ranks from '../Ranks/Ranks';
+import { TABS } from '../../constants/index';
 
 const Layout = () => {
+  const [tab, setTab] = useState('home');
+
   return (
     <div>
-      <TopNav />
-      <div>
-        <Route exact path="/" component={Match} />
-        <Route exact path="/footballers" component={Footballers} />
-        <Route exact path="/statistics" component={Statistics} />
-        <Route exact path="/ranks" component={Ranks} />
-      </div>
+      <TopNav setTab={setTab} tab={tab} />
+      {tab === TABS.HOME && <Match setTab={setTab} tab={tab} />}
+      {tab === TABS.FOOTBALLERS && <Footballers setTab={setTab} />}
+      {tab === TABS.STATISTICS && <Statistics setTab={setTab} />}
+      {tab === TABS.RANKS && <Ranks setTab={setTab} />}
+      {tab === TABS.DETAIL && <MatchDetail />}
       <Footer />
     </div>
   );
