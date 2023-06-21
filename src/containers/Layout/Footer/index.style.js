@@ -6,10 +6,6 @@ const FooterStyle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
   .footerLeft {
     flex: 1;
     align-items: center;

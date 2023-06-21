@@ -1,16 +1,11 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-import {
-  Wrapper,
-  Logo,
-  SubItem,
-  MenuItem,
-  Avatar,
-  SelectList,
-} from './index.style';
+import { Wrapper, Logo, MenuItem, Avatar, SelectList } from './index.style';
 import LogoImg from '../img/Slice_9.png';
 import AvatarImg from '../img/thu_1.png';
+import { TABS } from '../../../constants/index';
 
-const TopNav = () => {
+const TopNav = ({ tab, setTab }) => {
   const [value, setValue] = React.useState('en');
 
   const handleChange = (event) => {
@@ -25,12 +20,53 @@ const TopNav = () => {
             <Logo src={LogoImg} />
           </div>
           <div className="listItem">
-            <SubItem exact to="/">
-              MATCH
-            </SubItem>
-            <SubItem to="/footballers">FOOTBALLERS</SubItem>
-            <SubItem to="/statistics">STATISTICS</SubItem>
-            <SubItem to="/ranks">RANKS</SubItem>
+            <div className={`container ${tab === TABS.HOME ? 'active' : null}`}>
+              <div
+                onClick={() => {
+                  setTab(TABS.HOME);
+                }}
+              >
+                MATCH
+              </div>
+            </div>
+            <div
+              className={`container ${
+                tab === TABS.FOOTBALLERS ? 'active' : null
+              }`}
+            >
+              <div
+                onClick={() => {
+                  setTab(TABS.FOOTBALLERS);
+                }}
+              >
+                FOOTBALLERS
+              </div>
+            </div>
+            <div
+              className={`container ${
+                tab === TABS.STATISTICS ? 'active' : null
+              }`}
+            >
+              <div
+                className="subItem"
+                onClick={() => {
+                  setTab(TABS.STATISTICS);
+                }}
+              >
+                STATISTICS
+              </div>
+            </div>
+            <div
+              className={`container ${tab === TABS.RANKS ? 'active' : null}`}
+            >
+              <div
+                onClick={() => {
+                  setTab(TABS.RANKS);
+                }}
+              >
+                RANKS
+              </div>
+            </div>
           </div>
           <div className="headRight">
             <SelectList value={value} onChange={handleChange}>

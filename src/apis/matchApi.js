@@ -1,11 +1,11 @@
-import axios from 'axios';
+import api from './api';
 
 const getMatchList = async () => {
-  const response = await axios.get(
-    'https://project20221-team2-wordcup.onrender.com/api/tutorialmatch',
-  );
-  const data = await response.data;
-  return data;
+  const match = await api({
+    method: 'GET',
+    url: '/tutorialmatch',
+  });
+  return match;
 };
 
 export default getMatchList;
