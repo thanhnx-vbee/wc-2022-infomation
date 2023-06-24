@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from 'react';
+import React, { useState } from 'react';
 import { Wrapper, Logo, MenuItem, Avatar, SelectList } from './index.style';
 import LogoImg from '../img/Slice_9.png';
 import AvatarImg from '../img/thu_1.png';
 import { TABS } from '../../../constants/index';
 
 const TopNav = ({ tab, setTab }) => {
-  const [value, setValue] = React.useState('en');
+  const [value, setValue] = useState('en');
 
   const handleChange = (event) => {
     setValue(event.target.value);

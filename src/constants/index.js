@@ -10,4 +10,8 @@ export const TABS = {
   FOOTBALLERS: 'footballers',
   STATISTICS: 'statistics',
   RANKS: 'ranks',
+  DETAILS: 'details',
+  STRATEGY: 'strategy',
+  STATISTICAL: 'statistical',
+  NEW: 'new',
 };
