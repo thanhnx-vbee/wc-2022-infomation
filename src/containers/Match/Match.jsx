@@ -4,7 +4,8 @@ import getMatchList from '../../apis/matchApi';
 import { MatchStyle, Image } from './index.style';
 import { TABS } from '../../constants/index';
 
-const Match = ({ setTab }) => {
+const Match = ({ setTab, setMatchId }) => {
+  // const [changes, setChanges] = useState('details');
   const [matches, setMatches] = useState([]);
   const [dates, setDates] = useState([]);
 
@@ -81,6 +82,7 @@ const Match = ({ setTab }) => {
                         <div
                           className="createButton"
                           onClick={() => {
+                            setMatchId(subMatch.idMatch);
                             setTab(TABS.DETAIL);
                           }}
                         >

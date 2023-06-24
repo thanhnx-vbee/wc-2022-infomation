@@ -10,15 +10,18 @@ import { TABS } from '../../constants/index';
 
 const Layout = () => {
   const [tab, setTab] = useState('home');
+  const [matchId, setMatchId] = useState('');
 
   return (
     <div>
       <TopNav setTab={setTab} tab={tab} />
-      {tab === TABS.HOME && <Match setTab={setTab} tab={tab} />}
+      {tab === TABS.HOME && (
+        <Match setTab={setTab} tab={tab} setMatchId={setMatchId} />
+      )}
       {tab === TABS.FOOTBALLERS && <Footballers setTab={setTab} />}
       {tab === TABS.STATISTICS && <Statistics setTab={setTab} />}
       {tab === TABS.RANKS && <Ranks setTab={setTab} />}
-      {tab === TABS.DETAIL && <MatchDetail />}
+      {tab === TABS.DETAIL && <MatchDetail matchId={matchId} />}
       <Footer />
     </div>
   );
