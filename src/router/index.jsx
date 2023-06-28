@@ -19,7 +19,7 @@ const PrivateApp = () => {
   return (
     <Layout>
       <Switch>
-        {privateRoutes.map((privateRoute) => (
+        {privateRoutes.map((key, privateRoute) => (
           <PrivateRoute
             path={privateRoute.path}
             component={privateRoute.component}
