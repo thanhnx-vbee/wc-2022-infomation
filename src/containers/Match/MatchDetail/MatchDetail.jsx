@@ -47,29 +47,29 @@ const MatchDetail = ({ matchId }) => {
         </div>
         <div className="teams">
           <div className="team">
-            <img src={away.pictureUrl} alt="/" />
-            <a href={details.linkAwayTeam}>{away.teamName}</a>
+            <img src={home.pictureUrl} alt="/" />
+            <a href={details.linkHomeTeam}>{home.teamName}</a>
           </div>
           <div className="score">
             <div className="matchScore">
-              <div>{away.score}</div>
-              <div>-</div>
               <div>{home.score}</div>
+              <div>-</div>
+              <div>{away.score}</div>
             </div>
             <div className="penaltyScore">
-              <div>{details.awayTeamPenaltyScore}</div>
-              <div>penalty</div>
               <div>{details.homeTeamPenaltyScore}</div>
+              <div>penalty</div>
+              <div>{details.awayTeamPenaltyScore}</div>
             </div>
           </div>
           <div className="team">
-            <img src={home.pictureUrl} alt="/" />
-            <a href={details.linkHomeTeam}>{home.teamName}</a>
+            <img src={away.pictureUrl} alt="/" />
+            <a href={details.linkAwayTeam}>{away.teamName}</a>
           </div>
         </div>
         <div className="goals">
           <div className="goalLeft">
-            {awayGoal.slice(0, Math.floor(`${away.score}`)).map((win) => (
+            {homeGoal.slice(0, Math.floor(`${home.score}`)).map((win) => (
               <div className="win">
                 <span>{win.namePlayer}: </span>
                 <span>{win.minute}</span>
@@ -80,7 +80,7 @@ const MatchDetail = ({ matchId }) => {
             <span className="material-symbols-outlined">sports_soccer</span>
           </div>
           <div className="goalRight">
-            {homeGoal.slice(0, Math.floor(`${home.score}`)).map((win) => (
+            {awayGoal.slice(0, Math.floor(`${away.score}`)).map((win) => (
               <div className="win">
                 <span>{win.namePlayer}: </span>
                 <span>{win.minute}</span>
@@ -155,7 +155,7 @@ const MatchDetail = ({ matchId }) => {
           </div>
         </div>
         <div className="component">
-          {changes === TABS.DETAILS && <Development setChanges={setChanges} />}
+          {changes === TABS.DETAILS && <Development matchId={matchId} />}
           {changes === TABS.STRATEGY && <Strategy setChanges={setChanges} />}
           {changes === TABS.STATISTICAL && (
             <Statistical setChanges={setChanges} />
