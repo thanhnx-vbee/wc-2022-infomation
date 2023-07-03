@@ -16,3 +16,11 @@ export const DEVELOPMENTS = {
   SUB: 'Sub',
   BOOKING: 'Bookings',
 };
+
+export const POSITION = {
+  GOALKEEPER: '0',
+  DEFENDER: '1',
+  MIDFIELDER: '2',
+  FORWARD: '3',
+  RESERVER: '4',
+};
