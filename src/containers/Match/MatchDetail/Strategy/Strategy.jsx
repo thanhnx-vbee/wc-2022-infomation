@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import React, { useState, useEffect } from 'react';
 import getMatchStrategy from '@src/apis/matchStrategy';
 import { StrategyStyle } from './index.style';
@@ -188,6 +187,10 @@ const Strategy = ({ matchId }) => {
               ))}
             </div>
           </div>
+          <div className="match">{away.teamName}</div>
+        </div>
+        <div className="matchStrategy">
+          <div className="match">{home.teamName}</div>
         </div>
       </div>
     </StrategyStyle>
