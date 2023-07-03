@@ -10,7 +10,7 @@ import Icon from './img/youtube.png';
 import { TABS } from '../../../constants/index';
 
 const MatchDetail = ({ matchId }) => {
-  const [changes, setChanges] = useState('details');
+  const [changes, setChanges] = useState('strategy');
   const [details, setDetails] = useState({});
   const [away, setAway] = useState([]);
   const [home, setHome] = useState([]);

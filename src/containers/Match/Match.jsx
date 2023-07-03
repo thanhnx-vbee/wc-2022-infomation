@@ -25,7 +25,7 @@ const Match = ({ setTab, setMatchId }) => {
         .slice()
         .reverse()
         .map((match, index) => (
-          <div className="matchComponent">
+          <div className="matchComponent" key={match.matchId}>
             <form>
               <label
                 className="dateTime"
