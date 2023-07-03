@@ -1,9 +1,9 @@
 import axios from 'axios';
 import camelCase from 'camelcase-keys';
-import { API_URL } from '@src/configs';
+// import { API_URL } from '@src/configs';
 
 const axiosClient = axios.create({
-  baseURL: `${API_URL}/api`,
+  baseURL: `https://project20221-team2-wordcup.onrender.com/api`,
   responseType: 'json',
   timeout: 15 * 1000,
 });
