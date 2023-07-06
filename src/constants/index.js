@@ -18,9 +18,9 @@ export const DEVELOPMENTS = {
 };
 
 export const POSITION = {
-  GOALKEEPER: '0',
-  DEFENDER: '1',
-  MIDFIELDER: '2',
-  FORWARD: '3',
-  RESERVER: '4',
+  GOALKEEPER: 0,
+  DEFENDER: 1,
+  MIDFIELDER: 2,
+  FORWARD: 3,
+  RESERVER: 4,
 };
