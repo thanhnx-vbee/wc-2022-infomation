@@ -11,12 +11,21 @@ import { TABS } from '../../constants/index';
 const Layout = () => {
   const [tab, setTab] = useState('home');
   const [matchId, setMatchId] = useState('');
+  const [matches, setMatches] = useState([]);
+  const [date, setDate] = useState('');
 
   return (
     <div>
       <TopNav setTab={setTab} tab={tab} />
       {tab === TABS.HOME && (
-        <Match setTab={setTab} tab={tab} setMatchId={setMatchId} />
+        <Match
+          setTab={setTab}
+          setMatchId={setMatchId}
+          setMatches={setMatches}
+          setDate={setDate}
+          date={date}
+          matches={matches}
+        />
       )}
       {tab === TABS.FOOTBALLERS && <Footballers setTab={setTab} />}
       {tab === TABS.STATISTICS && <Statistics setTab={setTab} />}
